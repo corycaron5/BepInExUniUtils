@@ -6,11 +6,10 @@ using UnityEngine;
 namespace BepInExUniUtils.InputFramework;
 
 /// <summary>
-/// A struct representing an input action.
-/// Can accept multiple modifiers and a key.
+/// A struct representing an input.
 /// </summary>
-/// <param name="modifier">A modifier key that must be held when pressing the main key for the input to fire. Can be ommited.</param>
 /// <param name="key">The main key to listen for.</param>
+/// <param name="modifier">A modifier key that must be held when pressing the main key for the input to fire. Can be ommited.</param>
 [JsonObject(MemberSerialization.OptIn)]
 public struct InputTrigger(KeyCode key, KeyCode modifier = KeyCode.None): IEquatable<InputTrigger>
 {

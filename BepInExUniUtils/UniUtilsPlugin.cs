@@ -40,146 +40,146 @@ public class UniUtilsPlugin : BaseUnityPlugin
     }
     
     private void Start()
+    {
+        SetupConfig();
+    }
+    
+    /// <summary>
+    /// Triggers actions, action will not be called again until the key is released. Update is called every frame.
+    /// </summary>
+    private void Update()
+    {
+        if (Input.anyKeyDown)
         {
-            SetupConfig();
-        }
-        
-        /// <summary>
-        /// Triggers actions, action will not be called again until the key is released. Update is called every frame.
-        /// </summary>
-        private void Update()
-        {
-            if (Input.anyKeyDown)
+            if (Input.GetKeyDown(ReloadInputsKey.Value))
             {
-                if (Input.GetKeyDown(ReloadInputsKey.Value))
-                {
-                    Inputs.LoadConfig();
-                    return;
-                }
-                foreach (InputTrigger key in InputActions.Keys)
-                {
-                    if (key.IsDown())
-                    {
-                        foreach(AbstractAction action in InputActions[key])action.Execute();
-                    }
-                }
+                Inputs.LoadConfig();
+                return;
             }
-        }
-        
-        /// <summary>
-        /// Triggers repeating actions. FixedUpdate is called every physics frame. (20 ticks per second default)
-        /// </summary>
-        private void FixedUpdate()
-        {
-            if (Input.anyKey)
+            foreach (InputTrigger key in InputActions.Keys)
             {
-                foreach (InputTrigger key in RepeatingInputActions.Keys)
+                if (key.IsDown())
                 {
-                    if (key.IsPressed())
-                    {
-                        foreach(AbstractAction action in RepeatingInputActions[key])action.Execute();
-                    }
+                    foreach(AbstractAction action in InputActions[key])action.Execute();
                 }
             }
         }
-
-        /// <summary>
-        /// Loads or creates the custom configs.
-        /// </summary>
-        private void SetupConfig()
+    }
+    
+    /// <summary>
+    /// Triggers repeating actions. FixedUpdate is called every physics frame. (20 ticks per second default)
+    /// </summary>
+    private void FixedUpdate()
+    {
+        if (Input.anyKey)
         {
-            Inputs.ConfigLoaded += ResetInputMappings;
-            Inputs.LoadOrCreateConfig();
-        }
-        
-        /// <summary>
-        /// Attempts to create an action from the registry.
-        /// If the action is not found in the registry, it will try to create it from the assembly qualified name.
-        /// </summary>
-        /// <see cref="Type.AssemblyQualifiedName"/>
-        /// <param name="name">The ID of the action to create.</param>
-        /// <returns>The created action, or null if the action could not be created.</returns>
-        public static AbstractAction CreateAction(string name)
-        {
-            bool reg = ActionRegistry.TryGetValue(name, out Type actionType);
-            if(reg) return (AbstractAction)Activator.CreateInstance(actionType, name);
-            actionType = Type.GetType(name);
-            if (actionType == null) return null;
-            return (AbstractAction)Activator.CreateInstance(actionType, name);
-        }
-        
-        /// <summary>
-        /// Adds an action to the registry.
-        /// </summary>
-        /// <param name="abstractActionType">The type of action to register. Should be a subclass of AbstractAction.</param>
-        /// <returns>Whether the action was registered successfully.</returns>
-        public static bool RegisterAction(Type abstractActionType)
-        {
-            if (!abstractActionType.IsSubclassOf(typeof(AbstractAction)))
+            foreach (InputTrigger key in RepeatingInputActions.Keys)
             {
-                Logger.LogDebug($"Failed to register action: {abstractActionType.Name} is not a subtype of AbstractAction");
-                return false;
-            }
-            bool added = ActionRegistry.TryAdd(abstractActionType.Name, abstractActionType);
-            if (!added) Logger.LogDebug("Failed to register action: " + abstractActionType.Name);
-            else Logger.LogInfo("Registered action: " + abstractActionType.Name);
-            return added;
-        }
-
-        /// <summary>
-        /// Automatically registers all actions in this assembly.
-        /// </summary>
-        private static void RegisterInternalActions()
-        {
-            foreach (Type type in Assembly.GetExecutingAssembly().GetTypes())
-            {
-                // ReSharper disable once ArrangeStaticMemberQualifier
-                if(type.IsSubclassOf(typeof(AbstractAction))) UniUtilsPlugin.RegisterAction(type);
-            }
-        }
-        
-        /// <summary>
-        /// Clears the input actions.
-        /// </summary>
-        public static void ClearInputActions()
-        {
-            InputActions.Clear();
-            RepeatingInputActions.Clear();
-        }
-
-        /// <summary>
-        /// Clears the input actions and registers them again from the default sections in the config.
-        /// </summary>
-        protected static void ResetInputMappings(object sender, EventArgs eventArgs)
-        {
-            Logger.LogDebug("Resetting input mappings");
-            ClearInputActions();
-            RegisterInputActions(Inputs.InputActions, ref InputActions);
-            RegisterInputActions(Inputs.RepeatingInputActions, ref RepeatingInputActions);
-        }
-
-        /// <summary>
-        /// A system for converting serialized input mappings to input triggers and abstract actions.
-        /// </summary>
-        /// <see cref="InputMapping"/>
-        /// <see cref="InputTrigger"/>
-        /// <see cref="AbstractAction"/>
-        /// <param name="inputMappings">The list of input actions to read from.</param>
-        /// <param name="mappingsDict">The dictionary of actions to write the actions to.</param>
-        public static void RegisterInputActions(List<InputMapping> inputMappings, ref Dictionary<InputTrigger, List<AbstractAction>> mappingsDict)
-        {
-            foreach (InputMapping inMap in inputMappings)
-            {
-                KeyValuePair<InputTrigger, List<string>> entry = inMap.ToKeyValuePair();
-                List<AbstractAction> actions = new();
-                foreach (string action in entry.Value)
+                if (key.IsPressed())
                 {
-                    AbstractAction act = CreateAction(action);
-                    if (act == null) continue;
-                    actions.Add(act);
+                    foreach(AbstractAction action in RepeatingInputActions[key])action.Execute();
                 }
-                mappingsDict.Add(entry.Key, actions);
-                Logger.LogInfo($"Registered input mapping: {entry.Key} -> {string.Join(',', entry.Value)}");
             }
         }
+    }
+
+    /// <summary>
+    /// Loads or creates the custom configs.
+    /// </summary>
+    private void SetupConfig()
+    {
+        Inputs.ConfigLoaded += ResetInputMappings;
+        Inputs.LoadOrCreateConfig();
+    }
+    
+    /// <summary>
+    /// Attempts to create an action from the registry.
+    /// If the action is not found in the registry, it will try to create it from the assembly qualified name.
+    /// </summary>
+    /// <see cref="Type.AssemblyQualifiedName"/>
+    /// <param name="name">The ID of the action to create.</param>
+    /// <returns>The created action, or null if the action could not be created.</returns>
+    public static AbstractAction CreateAction(string name)
+    {
+        bool reg = ActionRegistry.TryGetValue(name, out Type actionType);
+        if(reg) return (AbstractAction)Activator.CreateInstance(actionType, name);
+        actionType = Type.GetType(name);
+        if (actionType == null) return null;
+        return (AbstractAction)Activator.CreateInstance(actionType, name);
+    }
+    
+    /// <summary>
+    /// Adds an action to the registry.
+    /// </summary>
+    /// <param name="abstractActionType">The type of action to register. Should be a subclass of AbstractAction.</param>
+    /// <returns>Whether the action was registered successfully.</returns>
+    public static bool RegisterAction(Type abstractActionType)
+    {
+        if (!abstractActionType.IsSubclassOf(typeof(AbstractAction)))
+        {
+            Logger.LogDebug($"Failed to register action: {abstractActionType.Name} is not a subtype of AbstractAction");
+            return false;
+        }
+        bool added = ActionRegistry.TryAdd(abstractActionType.Name, abstractActionType);
+        if (!added) Logger.LogDebug("Failed to register action: " + abstractActionType.Name);
+        else Logger.LogInfo("Registered action: " + abstractActionType.Name);
+        return added;
+    }
+
+    /// <summary>
+    /// Automatically registers all actions in this assembly.
+    /// </summary>
+    private static void RegisterInternalActions()
+    {
+        foreach (Type type in Assembly.GetExecutingAssembly().GetTypes())
+        {
+            // ReSharper disable once ArrangeStaticMemberQualifier
+            if(type.IsSubclassOf(typeof(AbstractAction))) UniUtilsPlugin.RegisterAction(type);
+        }
+    }
+    
+    /// <summary>
+    /// Clears the input actions.
+    /// </summary>
+    public static void ClearInputActions()
+    {
+        InputActions.Clear();
+        RepeatingInputActions.Clear();
+    }
+
+    /// <summary>
+    /// Clears the input actions and registers them again from the default sections in the config.
+    /// </summary>
+    protected static void ResetInputMappings(object sender, EventArgs eventArgs)
+    {
+        Logger.LogDebug("Resetting input mappings");
+        ClearInputActions();
+        RegisterInputActions(Inputs.InputActions, ref InputActions);
+        RegisterInputActions(Inputs.RepeatingInputActions, ref RepeatingInputActions);
+    }
+
+    /// <summary>
+    /// A system for converting serialized input mappings to input triggers and abstract actions.
+    /// </summary>
+    /// <see cref="InputMapping"/>
+    /// <see cref="InputTrigger"/>
+    /// <see cref="AbstractAction"/>
+    /// <param name="inputMappings">The list of input actions to read from.</param>
+    /// <param name="mappingsDict">The dictionary of actions to write the actions to.</param>
+    public static void RegisterInputActions(List<InputMapping> inputMappings, ref Dictionary<InputTrigger, List<AbstractAction>> mappingsDict)
+    {
+        foreach (InputMapping inMap in inputMappings)
+        {
+            KeyValuePair<InputTrigger, List<string>> entry = inMap.ToKeyValuePair();
+            List<AbstractAction> actions = new();
+            foreach (string action in entry.Value)
+            {
+                AbstractAction act = CreateAction(action);
+                if (act == null) continue;
+                actions.Add(act);
+            }
+            mappingsDict.Add(entry.Key, actions);
+            Logger.LogInfo($"Registered input mapping: {entry.Key} -> {string.Join(',', entry.Value)}");
+        }
+    }
 }

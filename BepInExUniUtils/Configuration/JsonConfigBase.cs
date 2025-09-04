@@ -32,7 +32,6 @@ public abstract class JsonConfigBase(string configName, string dirPath)
     /// <summary>
     /// Abstract method to save the config.
     /// Must be overridden by the derived class.
-    /// TODO: Add support for configuring inputs in game.
     /// </summary>
     public abstract void SaveConfig();
     
