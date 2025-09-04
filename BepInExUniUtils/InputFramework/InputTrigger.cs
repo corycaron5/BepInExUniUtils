@@ -13,9 +13,15 @@ namespace BepInExUniUtils.InputFramework;
 [JsonObject(MemberSerialization.OptIn)]
 public struct InputTrigger(KeyCode key, KeyCode modifier = KeyCode.None): IEquatable<InputTrigger>
 {
+    /// <summary>
+    /// Modifier that must be held when pressing the main key for the input to fire.
+    /// </summary>
     [JsonProperty, JsonConverter(typeof(StringEnumConverter))]
     public readonly KeyCode Modifier = modifier;
     
+    /// <summary>
+    /// Main key to listen for.
+    /// </summary>
     [JsonProperty, JsonConverter(typeof(StringEnumConverter))]
     public readonly KeyCode Key = key;
 

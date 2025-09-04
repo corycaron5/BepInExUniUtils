@@ -9,7 +9,14 @@ namespace BepInExUniUtils.InputFramework;
 /// <param name="actions"></param>
 public struct InputMapping(InputTrigger inputTrigger, List<string> actions)
 {
+    /// <summary>
+    /// The input trigger to listen for.
+    /// </summary>
     public InputTrigger InputTrigger = inputTrigger;
+    
+    /// <summary>
+    /// The names of the actions to trigger when the input is pressed.
+    /// </summary>
     // ReSharper disable once FieldCanBeMadeReadOnly.Global
     public List<string> Actions = actions;
 

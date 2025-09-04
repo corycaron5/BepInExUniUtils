@@ -14,9 +14,15 @@ namespace BepInExUniUtils.Configuration;
 [JsonObject(MemberSerialization.OptIn)]
 public class InputConfig(string configName, string dirPath) : JsonConfigBase(configName, dirPath)
 {
+    /// <summary>
+    /// Input mappings for non-repeating actions.
+    /// </summary>
     [JsonProperty]
     public readonly List<InputMapping> InputActions = new ();
     
+    /// <summary>
+    /// Input mappings for repeating actions.
+    /// </summary>
     [JsonProperty]
     public readonly List<InputMapping> RepeatingInputActions = new ();
 

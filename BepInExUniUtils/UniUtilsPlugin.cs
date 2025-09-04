@@ -11,6 +11,9 @@ using UnityEngine;
 
 namespace BepInExUniUtils;
 
+/// <summary>
+/// Main class for the plugin.
+/// </summary>
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 public class UniUtilsPlugin : BaseUnityPlugin
 {
@@ -18,14 +21,23 @@ public class UniUtilsPlugin : BaseUnityPlugin
     // ReSharper disable once UnusedMember.Local
     private readonly Harmony _harmony = new (MyPluginInfo.PLUGIN_GUID);
     
+    /// <summary>
+    /// Name of the input config file.
+    /// </summary>
     public const string InputFileName = "Input";
 
     private static readonly Dictionary<string, Type> ActionRegistry = new();
     internal static Dictionary<InputTrigger, List<AbstractAction>> InputActions = new ();
     internal static Dictionary<InputTrigger, List<AbstractAction>> RepeatingInputActions = new ();
 
+    /// <summary>
+    /// Input config object that handles loading and saving the input config file.
+    /// </summary>
     public static readonly InputConfig Inputs = new (InputFileName, Paths.ConfigPath);
     
+    /// <summary>
+    /// Key to reload the input config file.
+    /// </summary>
     public static ConfigEntry<KeyCode> ReloadInputsKey;
     
     private void Awake()

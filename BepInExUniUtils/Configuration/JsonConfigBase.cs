@@ -12,8 +12,19 @@ namespace BepInExUniUtils.Configuration;
 [JsonObject(MemberSerialization.OptIn)]
 public abstract class JsonConfigBase(string configName, string dirPath)
 {
+    /// <summary>
+    /// The name of the config file.
+    /// </summary>
     public readonly string ConfigName = configName;
+    
+    /// <summary>
+    /// The directory path for the config file.
+    /// </summary>
     public readonly string DirPath = dirPath;
+    
+    /// <summary>
+    /// An event that should be invoked when the config is loaded.
+    /// </summary>
     public event EventHandler ConfigLoaded;
 
     /// <summary>

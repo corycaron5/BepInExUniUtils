@@ -6,6 +6,10 @@ namespace BepInExUniUtils.InputFramework;
 /// <param name="id">The ID of the action.</param>
 public abstract class AbstractAction(string id)
 {
+    /// <summary>
+    /// The ID of the action.
+    /// Automatically set when the action is created.
+    /// </summary>
     public readonly string Id = id;
     
     /// <summary>

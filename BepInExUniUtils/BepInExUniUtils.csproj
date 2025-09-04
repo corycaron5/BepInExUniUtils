@@ -18,7 +18,6 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Authors>Cory Caron</Authors>
         <PackageProjectUrl>https://github.com/corycaron5/BepInExUniUtils</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/corycaron5/BepInExUniUtils/blob/main/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/corycaron5/BepInExUniUtils.git</RepositoryUrl>
         <RepositoryType>Github</RepositoryType>
     </PropertyGroup>
