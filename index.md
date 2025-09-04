@@ -2,9 +2,10 @@
 _layout: landing
 ---
 
-# BepInEx Universal Utilities
+# [BepInEx Universal Utilities](https://github.com/corycaron5/BepInExUniUtils)
 
 Universal Utilities for modding Unity games with BepInEx.
+[Github](https://github.com/corycaron5/BepInExUniUtils)
 
 ---
 
