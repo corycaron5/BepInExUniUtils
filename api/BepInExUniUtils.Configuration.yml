@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: BepInExUniUtils.Configuration
+  commentId: N:BepInExUniUtils.Configuration
+  id: BepInExUniUtils.Configuration
+  children:
+  - BepInExUniUtils.Configuration.InputConfig
+  - BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: BepInExUniUtils.Configuration
+  nameWithType: BepInExUniUtils.Configuration
+  fullName: BepInExUniUtils.Configuration
+  type: Namespace
+  assemblies:
+  - BepInExUniUtils
+references:
+- uid: BepInExUniUtils.Configuration.InputConfig
+  commentId: T:BepInExUniUtils.Configuration.InputConfig
+  parent: BepInExUniUtils.Configuration
+  href: BepInExUniUtils.Configuration.InputConfig.html
+  name: InputConfig
+  nameWithType: InputConfig
+  fullName: BepInExUniUtils.Configuration.InputConfig
+- uid: BepInExUniUtils.Configuration.JsonConfigBase
+  commentId: T:BepInExUniUtils.Configuration.JsonConfigBase
+  parent: BepInExUniUtils.Configuration
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html
+  name: JsonConfigBase
+  nameWithType: JsonConfigBase
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase
+- uid: BepInExUniUtils.Configuration
+  commentId: N:BepInExUniUtils.Configuration
+  href: BepInExUniUtils.html
+  name: BepInExUniUtils.Configuration
+  nameWithType: BepInExUniUtils.Configuration
+  fullName: BepInExUniUtils.Configuration
+  spec.csharp:
+  - uid: BepInExUniUtils
+    name: BepInExUniUtils
+    href: BepInExUniUtils.html
+  - name: .
+  - uid: BepInExUniUtils.Configuration
+    name: Configuration
+    href: BepInExUniUtils.Configuration.html
+  spec.vb:
+  - uid: BepInExUniUtils
+    name: BepInExUniUtils
+    href: BepInExUniUtils.html
+  - name: .
+  - uid: BepInExUniUtils.Configuration
+    name: Configuration
+    href: BepInExUniUtils.Configuration.html

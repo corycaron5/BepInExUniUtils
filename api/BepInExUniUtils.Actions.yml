@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: BepInExUniUtils.Actions
+  commentId: N:BepInExUniUtils.Actions
+  id: BepInExUniUtils.Actions
+  children:
+  - BepInExUniUtils.Actions.DummyAction
+  langs:
+  - csharp
+  - vb
+  name: BepInExUniUtils.Actions
+  nameWithType: BepInExUniUtils.Actions
+  fullName: BepInExUniUtils.Actions
+  type: Namespace
+  assemblies:
+  - BepInExUniUtils
+references:
+- uid: BepInExUniUtils.Actions.DummyAction
+  commentId: T:BepInExUniUtils.Actions.DummyAction
+  href: BepInExUniUtils.Actions.DummyAction.html
+  name: DummyAction
+  nameWithType: DummyAction
+  fullName: BepInExUniUtils.Actions.DummyAction

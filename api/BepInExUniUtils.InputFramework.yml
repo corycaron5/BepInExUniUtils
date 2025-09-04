@@ -1,0 +1,61 @@
+### YamlMime:ManagedReference
+items:
+- uid: BepInExUniUtils.InputFramework
+  commentId: N:BepInExUniUtils.InputFramework
+  id: BepInExUniUtils.InputFramework
+  children:
+  - BepInExUniUtils.InputFramework.AbstractAction
+  - BepInExUniUtils.InputFramework.InputMapping
+  - BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: BepInExUniUtils.InputFramework
+  nameWithType: BepInExUniUtils.InputFramework
+  fullName: BepInExUniUtils.InputFramework
+  type: Namespace
+  assemblies:
+  - BepInExUniUtils
+references:
+- uid: BepInExUniUtils.InputFramework.AbstractAction
+  commentId: T:BepInExUniUtils.InputFramework.AbstractAction
+  parent: BepInExUniUtils.InputFramework
+  href: BepInExUniUtils.InputFramework.AbstractAction.html
+  name: AbstractAction
+  nameWithType: AbstractAction
+  fullName: BepInExUniUtils.InputFramework.AbstractAction
+- uid: BepInExUniUtils.InputFramework.InputMapping
+  commentId: T:BepInExUniUtils.InputFramework.InputMapping
+  href: BepInExUniUtils.InputFramework.InputMapping.html
+  name: InputMapping
+  nameWithType: InputMapping
+  fullName: BepInExUniUtils.InputFramework.InputMapping
+- uid: BepInExUniUtils.InputFramework.InputTrigger
+  commentId: T:BepInExUniUtils.InputFramework.InputTrigger
+  parent: BepInExUniUtils.InputFramework
+  href: BepInExUniUtils.InputFramework.InputTrigger.html
+  name: InputTrigger
+  nameWithType: InputTrigger
+  fullName: BepInExUniUtils.InputFramework.InputTrigger
+- uid: BepInExUniUtils.InputFramework
+  commentId: N:BepInExUniUtils.InputFramework
+  href: BepInExUniUtils.html
+  name: BepInExUniUtils.InputFramework
+  nameWithType: BepInExUniUtils.InputFramework
+  fullName: BepInExUniUtils.InputFramework
+  spec.csharp:
+  - uid: BepInExUniUtils
+    name: BepInExUniUtils
+    href: BepInExUniUtils.html
+  - name: .
+  - uid: BepInExUniUtils.InputFramework
+    name: InputFramework
+    href: BepInExUniUtils.InputFramework.html
+  spec.vb:
+  - uid: BepInExUniUtils
+    name: BepInExUniUtils
+    href: BepInExUniUtils.html
+  - name: .
+  - uid: BepInExUniUtils.InputFramework
+    name: InputFramework
+    href: BepInExUniUtils.InputFramework.html

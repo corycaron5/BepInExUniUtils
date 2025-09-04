@@ -1,3 +1,7 @@
+---
+_layout: landing
+---
+
 # BepInEx Universal Utilities
 
 Universal Utilities for modding Unity games with BepInEx.
@@ -33,9 +37,9 @@ Currently there is no Nuget package for this, just reference the assembly direct
 ## Input Framework
 
 The Input Framework is pretty straight forward.  
-An [InputTrigger](BepInExUtils/InputFramework/InputTrigger.cs) is mapped to a list of [AbstractActions](BepInExUtils/InputFramework/AbstractAction.cs) that are all executed sequentially when the input is detected.  
+An [InputTrigger](./api/BepInExUniUtils.InputFramework.InputTrigger.html) is mapped to a list of [AbstractActions](./api/BepInExUniUtils.InputFramework.AbstractAction.html) that are all executed sequentially when the input is detected.  
 Inputs can trigger once or repeatedly.  
-The [InputTrigger](BepInExUtils/InputFramework/InputTrigger.cs) is a struct containing a main [KeyCode](https://docs.unity3d.com/ScriptReference/KeyCode.html) that is used to detect the input, and an optional modifier [KeyCode](https://docs.unity3d.com/ScriptReference/KeyCode.html) that must be held down to trigger it.  
+The [InputTrigger](./api/BepInExUniUtils.InputFramework.InputTrigger.html) is a struct containing a main [KeyCode](https://docs.unity3d.com/ScriptReference/KeyCode.html) that is used to detect the input, and an optional modifier [KeyCode](https://docs.unity3d.com/ScriptReference/KeyCode.html) that must be held down to trigger it.  
 
 ### Input Mappings
 
@@ -90,7 +94,7 @@ The execute method has no arguments and the ID of the action is handled automati
 
 ### Registering Custom Actions
 
-Actions can be manually registered by passing each `Type` that extends [AbstractActions](BepInExUtils/InputFramework/AbstractAction.cs) to the method [UniUtilsPlugin.RegisterAction(Type)](BepInExUniUtils/UniUtilsPlugin.cs#L116)  
+Actions can be manually registered by passing each `Type` that extends [AbstractActions](./api/BepInExUniUtils.InputFramework.AbstractAction.html) to the method [UniUtilsPlugin.RegisterAction(Type)](./api/BepInExUniUtils.UniUtilsPlugin.html#BepInExUniUtils_UniUtilsPlugin_RegisterAction_System_Type_)  
 However there is a much simpler method that uses reflection to automatically register all actions. Simply implement this method in your plugin and call it in `Awake()`.
 > ```
 > /// <summary>
@@ -112,7 +116,7 @@ However there is a much simpler method that uses reflection to automatically reg
 Json can be a powerful tool for serializing data and allows for much more complex functionality over TOML.  
 It does have a few drawbacks though, the inability to add comments and readability are the biggest when using it for configs.  
 My recommendation would be to use the standard BepInEx config unless you need to serialize collections or types not supported by the standard BepInEx config.  
-That being said, you can simply extend [JsonConfigBase](BepInExUtils/Configuration/JsonConfigBase.cs) and implement `GenerateDefaultConfig()`, `LoadConfig()`, and `SaveConfig()` if you want to create a Json config.  
+That being said, you can simply extend [JsonConfigBase](./api/BepInExUniUtils.Configuration.JsonConfigBase.html) and implement `GenerateDefaultConfig()`, `LoadConfig()`, and `SaveConfig()` if you want to create a Json config.  
 There is also an EventHandler `ConfigLoaded` in the event you need to trigger code upon loading the config.  
 You should make sure to call `OnConfigLoaded()` at the end of your `LoadConfig()` method to trigger the ConfigLoaded event.  
-See [InputConfig](BepInExUtils/Configuration/InputConfig.cs) for an example implementation.
+See [InputConfig](./api/BepInExUniUtils.Configuration.InputConfig.html) for an example implementation.

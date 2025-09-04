@@ -1,0 +1,43 @@
+### YamlMime:TableOfContent
+items:
+- uid: BepInExUniUtils
+  name: BepInExUniUtils
+  type: Namespace
+  items:
+  - uid: BepInExUniUtils.MyPluginInfo
+    name: MyPluginInfo
+    type: Class
+  - uid: BepInExUniUtils.UniUtilsPlugin
+    name: UniUtilsPlugin
+    type: Class
+- uid: BepInExUniUtils.Actions
+  name: BepInExUniUtils.Actions
+  type: Namespace
+  items:
+  - uid: BepInExUniUtils.Actions.DummyAction
+    name: DummyAction
+    type: Class
+- uid: BepInExUniUtils.Configuration
+  name: BepInExUniUtils.Configuration
+  type: Namespace
+  items:
+  - uid: BepInExUniUtils.Configuration.InputConfig
+    name: InputConfig
+    type: Class
+  - uid: BepInExUniUtils.Configuration.JsonConfigBase
+    name: JsonConfigBase
+    type: Class
+- uid: BepInExUniUtils.InputFramework
+  name: BepInExUniUtils.InputFramework
+  type: Namespace
+  items:
+  - uid: BepInExUniUtils.InputFramework.AbstractAction
+    name: AbstractAction
+    type: Class
+  - uid: BepInExUniUtils.InputFramework.InputMapping
+    name: InputMapping
+    type: Struct
+  - uid: BepInExUniUtils.InputFramework.InputTrigger
+    name: InputTrigger
+    type: Struct
+memberLayout: SamePage

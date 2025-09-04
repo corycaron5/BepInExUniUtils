@@ -1,0 +1,256 @@
+{
+  "source_base_path": "D:/RiderProjects/BepInExUniUtils",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.Actions.DummyAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.Actions.DummyAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.Actions.DummyAction",
+      "Summary": "<p sourcefile=\"api/BepInExUniUtils.Actions.DummyAction.yml\" sourcestartlinenumber=\"1\">A dummy action that does nothing.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.Actions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.Actions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.Actions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.Configuration.InputConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.Configuration.InputConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.Configuration.InputConfig",
+      "Summary": "<p sourcefile=\"api/BepInExUniUtils.Configuration.InputConfig.yml\" sourcestartlinenumber=\"1\">Config for mapping inputs to custom actions.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.Configuration.JsonConfigBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.Configuration.JsonConfigBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.Configuration.JsonConfigBase",
+      "Summary": "<p sourcefile=\"api/BepInExUniUtils.Configuration.JsonConfigBase.yml\" sourcestartlinenumber=\"1\">Base class for JSON configurations.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.Configuration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.Configuration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.InputFramework.AbstractAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.InputFramework.AbstractAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.InputFramework.AbstractAction",
+      "Summary": "<p sourcefile=\"api/BepInExUniUtils.InputFramework.AbstractAction.yml\" sourcestartlinenumber=\"1\">An abstract class representing an action.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.InputFramework.InputMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.InputFramework.InputMapping.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.InputFramework.InputMapping",
+      "Summary": "<p sourcefile=\"api/BepInExUniUtils.InputFramework.InputMapping.yml\" sourcestartlinenumber=\"1\">A class used for serializing input mappings.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.InputFramework.InputTrigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.InputFramework.InputTrigger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.InputFramework.InputTrigger",
+      "Summary": "<p sourcefile=\"api/BepInExUniUtils.InputFramework.InputTrigger.yml\" sourcestartlinenumber=\"1\">A struct representing an input.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.InputFramework.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.InputFramework.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.InputFramework",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.MyPluginInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.MyPluginInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.MyPluginInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.UniUtilsPlugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.UniUtilsPlugin.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils.UniUtilsPlugin",
+      "Summary": "<p sourcefile=\"api/BepInExUniUtils.UniUtilsPlugin.yml\" sourcestartlinenumber=\"1\">Main class for the plugin.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BepInExUniUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BepInExUniUtils.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BepInExUniUtils",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

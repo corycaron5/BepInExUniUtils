@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: BepInExUniUtils
+  commentId: N:BepInExUniUtils
+  id: BepInExUniUtils
+  children:
+  - BepInExUniUtils.MyPluginInfo
+  - BepInExUniUtils.UniUtilsPlugin
+  langs:
+  - csharp
+  - vb
+  name: BepInExUniUtils
+  nameWithType: BepInExUniUtils
+  fullName: BepInExUniUtils
+  type: Namespace
+  assemblies:
+  - BepInExUniUtils
+references:
+- uid: BepInExUniUtils.UniUtilsPlugin
+  commentId: T:BepInExUniUtils.UniUtilsPlugin
+  href: BepInExUniUtils.UniUtilsPlugin.html
+  name: UniUtilsPlugin
+  nameWithType: UniUtilsPlugin
+  fullName: BepInExUniUtils.UniUtilsPlugin
+- uid: BepInExUniUtils.MyPluginInfo
+  commentId: T:BepInExUniUtils.MyPluginInfo
+  href: BepInExUniUtils.MyPluginInfo.html
+  name: MyPluginInfo
+  nameWithType: MyPluginInfo
+  fullName: BepInExUniUtils.MyPluginInfo

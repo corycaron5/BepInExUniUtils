@@ -1,0 +1,823 @@
+### YamlMime:ManagedReference
+items:
+- uid: BepInExUniUtils.Configuration.JsonConfigBase
+  commentId: T:BepInExUniUtils.Configuration.JsonConfigBase
+  id: JsonConfigBase
+  parent: BepInExUniUtils.Configuration
+  children:
+  - BepInExUniUtils.Configuration.JsonConfigBase.#ctor(System.String,System.String)
+  - BepInExUniUtils.Configuration.JsonConfigBase.ConfigLoaded
+  - BepInExUniUtils.Configuration.JsonConfigBase.ConfigName
+  - BepInExUniUtils.Configuration.JsonConfigBase.DirPath
+  - BepInExUniUtils.Configuration.JsonConfigBase.DoesConfigExist
+  - BepInExUniUtils.Configuration.JsonConfigBase.FilePath
+  - BepInExUniUtils.Configuration.JsonConfigBase.GenerateDefaultConfig
+  - BepInExUniUtils.Configuration.JsonConfigBase.GetSerializerSettings
+  - BepInExUniUtils.Configuration.JsonConfigBase.LoadConfig
+  - BepInExUniUtils.Configuration.JsonConfigBase.LoadOrCreateConfig
+  - BepInExUniUtils.Configuration.JsonConfigBase.OnConfigLoaded
+  - BepInExUniUtils.Configuration.JsonConfigBase.SaveConfig
+  langs:
+  - csharp
+  - vb
+  name: JsonConfigBase
+  nameWithType: JsonConfigBase
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase
+  type: Class
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: JsonConfigBase
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 11
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: Base class for JSON configurations.
+  example: []
+  syntax:
+    content: >-
+      [JsonObject(MemberSerialization.OptIn)]
+
+      public abstract class JsonConfigBase
+    content.vb: >-
+      <JsonObject(MemberSerialization.OptIn)>
+
+      Public MustInherit Class JsonConfigBase
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - BepInExUniUtils.Configuration.InputConfig
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: Newtonsoft.Json.JsonObjectAttribute
+    ctor: Newtonsoft.Json.JsonObjectAttribute.#ctor(Newtonsoft.Json.MemberSerialization)
+    arguments:
+    - type: Newtonsoft.Json.MemberSerialization
+      value: 1
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.#ctor(System.String,System.String)
+  commentId: M:BepInExUniUtils.Configuration.JsonConfigBase.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: JsonConfigBase(string, string)
+  nameWithType: JsonConfigBase.JsonConfigBase(string, string)
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.JsonConfigBase(string, string)
+  type: Constructor
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: .ctor
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 11
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: Base class for JSON configurations.
+  example: []
+  syntax:
+    content: protected JsonConfigBase(string configName, string dirPath)
+    parameters:
+    - id: configName
+      type: System.String
+      description: Name of the config file.
+    - id: dirPath
+      type: System.String
+      description: Directory path for the config file.
+    content.vb: Protected Sub New(configName As String, dirPath As String)
+  overload: BepInExUniUtils.Configuration.JsonConfigBase.#ctor*
+  nameWithType.vb: JsonConfigBase.New(String, String)
+  fullName.vb: BepInExUniUtils.Configuration.JsonConfigBase.New(String, String)
+  name.vb: New(String, String)
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.ConfigName
+  commentId: F:BepInExUniUtils.Configuration.JsonConfigBase.ConfigName
+  id: ConfigName
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: ConfigName
+  nameWithType: JsonConfigBase.ConfigName
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.ConfigName
+  type: Field
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: ConfigName
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 17
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: The name of the config file.
+  example: []
+  syntax:
+    content: public readonly string ConfigName
+    return:
+      type: System.String
+    content.vb: Public ReadOnly ConfigName As String
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.DirPath
+  commentId: F:BepInExUniUtils.Configuration.JsonConfigBase.DirPath
+  id: DirPath
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: DirPath
+  nameWithType: JsonConfigBase.DirPath
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.DirPath
+  type: Field
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: DirPath
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 22
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: The directory path for the config file.
+  example: []
+  syntax:
+    content: public readonly string DirPath
+    return:
+      type: System.String
+    content.vb: Public ReadOnly DirPath As String
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.ConfigLoaded
+  commentId: E:BepInExUniUtils.Configuration.JsonConfigBase.ConfigLoaded
+  id: ConfigLoaded
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: ConfigLoaded
+  nameWithType: JsonConfigBase.ConfigLoaded
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.ConfigLoaded
+  type: Event
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: ConfigLoaded
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 27
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: An event that should be invoked when the config is loaded.
+  example: []
+  syntax:
+    content: public event EventHandler ConfigLoaded
+    return:
+      type: System.EventHandler
+    content.vb: Public Event ConfigLoaded As EventHandler
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.GenerateDefaultConfig
+  commentId: M:BepInExUniUtils.Configuration.JsonConfigBase.GenerateDefaultConfig
+  id: GenerateDefaultConfig
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: GenerateDefaultConfig()
+  nameWithType: JsonConfigBase.GenerateDefaultConfig()
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.GenerateDefaultConfig()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: GenerateDefaultConfig
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 33
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: >-
+    Abstract method to generates the default config.
+
+    Must be overridden by the derived class.
+  example: []
+  syntax:
+    content: protected abstract void GenerateDefaultConfig()
+    content.vb: Protected MustOverride Sub GenerateDefaultConfig()
+  overload: BepInExUniUtils.Configuration.JsonConfigBase.GenerateDefaultConfig*
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.LoadConfig
+  commentId: M:BepInExUniUtils.Configuration.JsonConfigBase.LoadConfig
+  id: LoadConfig
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: LoadConfig()
+  nameWithType: JsonConfigBase.LoadConfig()
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.LoadConfig()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: LoadConfig
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 40
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: >-
+    Abstract method to load the config.
+
+    Must be overridden by the derived class.
+  example: []
+  syntax:
+    content: public abstract void LoadConfig()
+    content.vb: Public MustOverride Sub LoadConfig()
+  overload: BepInExUniUtils.Configuration.JsonConfigBase.LoadConfig*
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.SaveConfig
+  commentId: M:BepInExUniUtils.Configuration.JsonConfigBase.SaveConfig
+  id: SaveConfig
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: SaveConfig()
+  nameWithType: JsonConfigBase.SaveConfig()
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.SaveConfig()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: SaveConfig
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 46
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: >-
+    Abstract method to save the config.
+
+    Must be overridden by the derived class.
+  example: []
+  syntax:
+    content: public abstract void SaveConfig()
+    content.vb: Public MustOverride Sub SaveConfig()
+  overload: BepInExUniUtils.Configuration.JsonConfigBase.SaveConfig*
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.FilePath
+  commentId: P:BepInExUniUtils.Configuration.JsonConfigBase.FilePath
+  id: FilePath
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: FilePath
+  nameWithType: JsonConfigBase.FilePath
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.FilePath
+  type: Property
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: FilePath
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 52
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: Filepath of the config file.
+  example: []
+  syntax:
+    content: public string FilePath { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: String with the filepath for this config.
+    content.vb: Public ReadOnly Property FilePath As String
+  overload: BepInExUniUtils.Configuration.JsonConfigBase.FilePath*
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.DoesConfigExist
+  commentId: M:BepInExUniUtils.Configuration.JsonConfigBase.DoesConfigExist
+  id: DoesConfigExist
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: DoesConfigExist()
+  nameWithType: JsonConfigBase.DoesConfigExist()
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.DoesConfigExist()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: DoesConfigExist
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 58
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: Checks if this config exists on the file system.
+  example: []
+  syntax:
+    content: public bool DoesConfigExist()
+    return:
+      type: System.Boolean
+      description: True if the file is found.
+    content.vb: Public Function DoesConfigExist() As Boolean
+  overload: BepInExUniUtils.Configuration.JsonConfigBase.DoesConfigExist*
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.LoadOrCreateConfig
+  commentId: M:BepInExUniUtils.Configuration.JsonConfigBase.LoadOrCreateConfig
+  id: LoadOrCreateConfig
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: LoadOrCreateConfig()
+  nameWithType: JsonConfigBase.LoadOrCreateConfig()
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.LoadOrCreateConfig()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: LoadOrCreateConfig
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 64
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: Loads or creates the config.
+  example: []
+  syntax:
+    content: public virtual JsonConfigBase LoadOrCreateConfig()
+    return:
+      type: BepInExUniUtils.Configuration.JsonConfigBase
+      description: This config after being loaded or created.
+    content.vb: Public Overridable Function LoadOrCreateConfig() As JsonConfigBase
+  overload: BepInExUniUtils.Configuration.JsonConfigBase.LoadOrCreateConfig*
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.GetSerializerSettings
+  commentId: M:BepInExUniUtils.Configuration.JsonConfigBase.GetSerializerSettings
+  id: GetSerializerSettings
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: GetSerializerSettings()
+  nameWithType: JsonConfigBase.GetSerializerSettings()
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.GetSerializerSettings()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: GetSerializerSettings
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 76
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: >-
+    Gets the serializer settings for the config.
+
+    The default settings are indented formatting.
+  example: []
+  syntax:
+    content: public virtual JsonSerializerSettings GetSerializerSettings()
+    return:
+      type: Newtonsoft.Json.JsonSerializerSettings
+      description: The serializer settings for the config.
+    content.vb: Public Overridable Function GetSerializerSettings() As JsonSerializerSettings
+  overload: BepInExUniUtils.Configuration.JsonConfigBase.GetSerializerSettings*
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.OnConfigLoaded
+  commentId: M:BepInExUniUtils.Configuration.JsonConfigBase.OnConfigLoaded
+  id: OnConfigLoaded
+  parent: BepInExUniUtils.Configuration.JsonConfigBase
+  langs:
+  - csharp
+  - vb
+  name: OnConfigLoaded()
+  nameWithType: JsonConfigBase.OnConfigLoaded()
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.OnConfigLoaded()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: OnConfigLoaded
+    path: BepInExUniUtils/Configuration/JsonConfigBase.cs
+    startLine: 86
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.Configuration
+  summary: Event invocation for when the config is loaded.
+  example: []
+  syntax:
+    content: protected virtual void OnConfigLoaded()
+    content.vb: Protected Overridable Sub OnConfigLoaded()
+  overload: BepInExUniUtils.Configuration.JsonConfigBase.OnConfigLoaded*
+references:
+- uid: BepInExUniUtils.Configuration
+  commentId: N:BepInExUniUtils.Configuration
+  href: BepInExUniUtils.html
+  name: BepInExUniUtils.Configuration
+  nameWithType: BepInExUniUtils.Configuration
+  fullName: BepInExUniUtils.Configuration
+  spec.csharp:
+  - uid: BepInExUniUtils
+    name: BepInExUniUtils
+    href: BepInExUniUtils.html
+  - name: .
+  - uid: BepInExUniUtils.Configuration
+    name: Configuration
+    href: BepInExUniUtils.Configuration.html
+  spec.vb:
+  - uid: BepInExUniUtils
+    name: BepInExUniUtils
+    href: BepInExUniUtils.html
+  - name: .
+  - uid: BepInExUniUtils.Configuration
+    name: Configuration
+    href: BepInExUniUtils.Configuration.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.#ctor*
+  commentId: Overload:BepInExUniUtils.Configuration.JsonConfigBase.#ctor
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html#BepInExUniUtils_Configuration_JsonConfigBase__ctor_System_String_System_String_
+  name: JsonConfigBase
+  nameWithType: JsonConfigBase.JsonConfigBase
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.JsonConfigBase
+  nameWithType.vb: JsonConfigBase.New
+  fullName.vb: BepInExUniUtils.Configuration.JsonConfigBase.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.EventHandler
+  commentId: T:System.EventHandler
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.eventhandler
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.GenerateDefaultConfig*
+  commentId: Overload:BepInExUniUtils.Configuration.JsonConfigBase.GenerateDefaultConfig
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html#BepInExUniUtils_Configuration_JsonConfigBase_GenerateDefaultConfig
+  name: GenerateDefaultConfig
+  nameWithType: JsonConfigBase.GenerateDefaultConfig
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.GenerateDefaultConfig
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.LoadConfig*
+  commentId: Overload:BepInExUniUtils.Configuration.JsonConfigBase.LoadConfig
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html#BepInExUniUtils_Configuration_JsonConfigBase_LoadConfig
+  name: LoadConfig
+  nameWithType: JsonConfigBase.LoadConfig
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.LoadConfig
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.SaveConfig*
+  commentId: Overload:BepInExUniUtils.Configuration.JsonConfigBase.SaveConfig
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html#BepInExUniUtils_Configuration_JsonConfigBase_SaveConfig
+  name: SaveConfig
+  nameWithType: JsonConfigBase.SaveConfig
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.SaveConfig
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.FilePath*
+  commentId: Overload:BepInExUniUtils.Configuration.JsonConfigBase.FilePath
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html#BepInExUniUtils_Configuration_JsonConfigBase_FilePath
+  name: FilePath
+  nameWithType: JsonConfigBase.FilePath
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.FilePath
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.DoesConfigExist*
+  commentId: Overload:BepInExUniUtils.Configuration.JsonConfigBase.DoesConfigExist
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html#BepInExUniUtils_Configuration_JsonConfigBase_DoesConfigExist
+  name: DoesConfigExist
+  nameWithType: JsonConfigBase.DoesConfigExist
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.DoesConfigExist
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.LoadOrCreateConfig*
+  commentId: Overload:BepInExUniUtils.Configuration.JsonConfigBase.LoadOrCreateConfig
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html#BepInExUniUtils_Configuration_JsonConfigBase_LoadOrCreateConfig
+  name: LoadOrCreateConfig
+  nameWithType: JsonConfigBase.LoadOrCreateConfig
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.LoadOrCreateConfig
+- uid: BepInExUniUtils.Configuration.JsonConfigBase
+  commentId: T:BepInExUniUtils.Configuration.JsonConfigBase
+  parent: BepInExUniUtils.Configuration
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html
+  name: JsonConfigBase
+  nameWithType: JsonConfigBase
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.GetSerializerSettings*
+  commentId: Overload:BepInExUniUtils.Configuration.JsonConfigBase.GetSerializerSettings
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html#BepInExUniUtils_Configuration_JsonConfigBase_GetSerializerSettings
+  name: GetSerializerSettings
+  nameWithType: JsonConfigBase.GetSerializerSettings
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.GetSerializerSettings
+- uid: Newtonsoft.Json.JsonSerializerSettings
+  commentId: T:Newtonsoft.Json.JsonSerializerSettings
+  parent: Newtonsoft.Json
+  isExternal: true
+  name: JsonSerializerSettings
+  nameWithType: JsonSerializerSettings
+  fullName: Newtonsoft.Json.JsonSerializerSettings
+- uid: Newtonsoft.Json
+  commentId: N:Newtonsoft.Json
+  isExternal: true
+  name: Newtonsoft.Json
+  nameWithType: Newtonsoft.Json
+  fullName: Newtonsoft.Json
+  spec.csharp:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+  spec.vb:
+  - uid: Newtonsoft
+    name: Newtonsoft
+    isExternal: true
+  - name: .
+  - uid: Newtonsoft.Json
+    name: Json
+    isExternal: true
+- uid: BepInExUniUtils.Configuration.JsonConfigBase.OnConfigLoaded*
+  commentId: Overload:BepInExUniUtils.Configuration.JsonConfigBase.OnConfigLoaded
+  href: BepInExUniUtils.Configuration.JsonConfigBase.html#BepInExUniUtils_Configuration_JsonConfigBase_OnConfigLoaded
+  name: OnConfigLoaded
+  nameWithType: JsonConfigBase.OnConfigLoaded
+  fullName: BepInExUniUtils.Configuration.JsonConfigBase.OnConfigLoaded

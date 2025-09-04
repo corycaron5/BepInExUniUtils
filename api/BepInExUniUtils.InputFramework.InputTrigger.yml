@@ -1,0 +1,895 @@
+### YamlMime:ManagedReference
+items:
+- uid: BepInExUniUtils.InputFramework.InputTrigger
+  commentId: T:BepInExUniUtils.InputFramework.InputTrigger
+  id: InputTrigger
+  parent: BepInExUniUtils.InputFramework
+  children:
+  - BepInExUniUtils.InputFramework.InputTrigger.#ctor(UnityEngine.KeyCode,UnityEngine.KeyCode)
+  - BepInExUniUtils.InputFramework.InputTrigger.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+  - BepInExUniUtils.InputFramework.InputTrigger.Equals(System.Object)
+  - BepInExUniUtils.InputFramework.InputTrigger.GetHashCode
+  - BepInExUniUtils.InputFramework.InputTrigger.IsDown
+  - BepInExUniUtils.InputFramework.InputTrigger.IsPressed
+  - BepInExUniUtils.InputFramework.InputTrigger.Key
+  - BepInExUniUtils.InputFramework.InputTrigger.Modifier
+  - BepInExUniUtils.InputFramework.InputTrigger.ToString
+  - BepInExUniUtils.InputFramework.InputTrigger.TryParse(System.String,System.Boolean@)
+  langs:
+  - csharp
+  - vb
+  name: InputTrigger
+  nameWithType: InputTrigger
+  fullName: BepInExUniUtils.InputFramework.InputTrigger
+  type: Struct
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: InputTrigger
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 12
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: A struct representing an input.
+  example: []
+  syntax:
+    content: >-
+      [JsonObject(MemberSerialization.OptIn)]
+
+      public struct InputTrigger : IEquatable<InputTrigger>
+    content.vb: >-
+      <JsonObject(MemberSerialization.OptIn)>
+
+      Public Structure InputTrigger Implements IEquatable(Of InputTrigger)
+  implements:
+  - System.IEquatable{BepInExUniUtils.InputFramework.InputTrigger}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  attributes:
+  - type: Newtonsoft.Json.JsonObjectAttribute
+    ctor: Newtonsoft.Json.JsonObjectAttribute.#ctor(Newtonsoft.Json.MemberSerialization)
+    arguments:
+    - type: Newtonsoft.Json.MemberSerialization
+      value: 1
+- uid: BepInExUniUtils.InputFramework.InputTrigger.#ctor(UnityEngine.KeyCode,UnityEngine.KeyCode)
+  commentId: M:BepInExUniUtils.InputFramework.InputTrigger.#ctor(UnityEngine.KeyCode,UnityEngine.KeyCode)
+  id: '#ctor(UnityEngine.KeyCode,UnityEngine.KeyCode)'
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: InputTrigger(KeyCode, KeyCode)
+  nameWithType: InputTrigger.InputTrigger(KeyCode, KeyCode)
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.InputTrigger(UnityEngine.KeyCode, UnityEngine.KeyCode)
+  type: Constructor
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: .ctor
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 12
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: A struct representing an input.
+  example: []
+  syntax:
+    content: public InputTrigger(KeyCode key, KeyCode modifier = KeyCode.None)
+    parameters:
+    - id: key
+      type: UnityEngine.KeyCode
+      description: The main key to listen for.
+    - id: modifier
+      type: UnityEngine.KeyCode
+      description: A modifier key that must be held when pressing the main key for the input to fire. Can be ommited.
+    content.vb: Public Sub New(key As KeyCode, modifier As KeyCode = KeyCode.None)
+  overload: BepInExUniUtils.InputFramework.InputTrigger.#ctor*
+  nameWithType.vb: InputTrigger.New(KeyCode, KeyCode)
+  fullName.vb: BepInExUniUtils.InputFramework.InputTrigger.New(UnityEngine.KeyCode, UnityEngine.KeyCode)
+  name.vb: New(KeyCode, KeyCode)
+- uid: BepInExUniUtils.InputFramework.InputTrigger.Modifier
+  commentId: F:BepInExUniUtils.InputFramework.InputTrigger.Modifier
+  id: Modifier
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: Modifier
+  nameWithType: InputTrigger.Modifier
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.Modifier
+  type: Field
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: Modifier
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 19
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: Modifier that must be held when pressing the main key for the input to fire.
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      [JsonConverter(typeof(StringEnumConverter))]
+
+      public readonly KeyCode Modifier
+    return:
+      type: UnityEngine.KeyCode
+    content.vb: >-
+      <JsonProperty>
+
+      <JsonConverter(GetType(StringEnumConverter))>
+
+      Public ReadOnly Modifier As KeyCode
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+  - type: Newtonsoft.Json.JsonConverterAttribute
+    ctor: Newtonsoft.Json.JsonConverterAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: Newtonsoft.Json.Converters.StringEnumConverter
+- uid: BepInExUniUtils.InputFramework.InputTrigger.Key
+  commentId: F:BepInExUniUtils.InputFramework.InputTrigger.Key
+  id: Key
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: Key
+  nameWithType: InputTrigger.Key
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.Key
+  type: Field
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: Key
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 25
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: Main key to listen for.
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty]
+
+      [JsonConverter(typeof(StringEnumConverter))]
+
+      public readonly KeyCode Key
+    return:
+      type: UnityEngine.KeyCode
+    content.vb: >-
+      <JsonProperty>
+
+      <JsonConverter(GetType(StringEnumConverter))>
+
+      Public ReadOnly Key As KeyCode
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+  - type: Newtonsoft.Json.JsonConverterAttribute
+    ctor: Newtonsoft.Json.JsonConverterAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: Newtonsoft.Json.Converters.StringEnumConverter
+- uid: BepInExUniUtils.InputFramework.InputTrigger.IsPressed
+  commentId: M:BepInExUniUtils.InputFramework.InputTrigger.IsPressed
+  id: IsPressed
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: IsPressed()
+  nameWithType: InputTrigger.IsPressed()
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.IsPressed()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: IsPressed
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 32
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: >-
+    Checks if the input is currently pressed.
+
+    Will return true every tick while the key is held down.
+  example: []
+  syntax:
+    content: public bool IsPressed()
+    return:
+      type: System.Boolean
+      description: True if the input is currently pressed.
+    content.vb: Public Function IsPressed() As Boolean
+  overload: BepInExUniUtils.InputFramework.InputTrigger.IsPressed*
+- uid: BepInExUniUtils.InputFramework.InputTrigger.IsDown
+  commentId: M:BepInExUniUtils.InputFramework.InputTrigger.IsDown
+  id: IsDown
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: IsDown()
+  nameWithType: InputTrigger.IsDown()
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.IsDown()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: IsDown
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 47
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: >-
+    Checks if the input is currently down.
+
+    Only triggers once until the main key is released.
+  example: []
+  syntax:
+    content: public bool IsDown()
+    return:
+      type: System.Boolean
+      description: True if the input is currently down.
+    content.vb: Public Function IsDown() As Boolean
+  overload: BepInExUniUtils.InputFramework.InputTrigger.IsDown*
+- uid: BepInExUniUtils.InputFramework.InputTrigger.ToString
+  commentId: M:BepInExUniUtils.InputFramework.InputTrigger.ToString
+  id: ToString
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: InputTrigger.ToString()
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.ToString()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: ToString
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 61
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: Converts the input to a string.
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: The string representation of the input.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: BepInExUniUtils.InputFramework.InputTrigger.ToString*
+- uid: BepInExUniUtils.InputFramework.InputTrigger.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+  commentId: M:BepInExUniUtils.InputFramework.InputTrigger.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+  id: Equals(BepInExUniUtils.InputFramework.InputTrigger)
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: Equals(InputTrigger)
+  nameWithType: InputTrigger.Equals(InputTrigger)
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: Equals
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 71
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: Checks if this InputTrigger is equal to another InputTrigger.
+  example: []
+  syntax:
+    content: public bool Equals(InputTrigger other)
+    parameters:
+    - id: other
+      type: BepInExUniUtils.InputFramework.InputTrigger
+      description: The other InputTrigger to compare to.
+    return:
+      type: System.Boolean
+      description: True if the two inputs are equal.
+    content.vb: Public Function Equals(other As InputTrigger) As Boolean
+  overload: BepInExUniUtils.InputFramework.InputTrigger.Equals*
+  implements:
+  - System.IEquatable{BepInExUniUtils.InputFramework.InputTrigger}.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+- uid: BepInExUniUtils.InputFramework.InputTrigger.Equals(System.Object)
+  commentId: M:BepInExUniUtils.InputFramework.InputTrigger.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: InputTrigger.Equals(object)
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: Equals
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 81
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: Checks if this InputTrigger is equal to another object.
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare to.
+    return:
+      type: System.Boolean
+      description: True if the object is a InputTrigger and is equal to this one.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: BepInExUniUtils.InputFramework.InputTrigger.Equals*
+  nameWithType.vb: InputTrigger.Equals(Object)
+  fullName.vb: BepInExUniUtils.InputFramework.InputTrigger.Equals(Object)
+  name.vb: Equals(Object)
+- uid: BepInExUniUtils.InputFramework.InputTrigger.GetHashCode
+  commentId: M:BepInExUniUtils.InputFramework.InputTrigger.GetHashCode
+  id: GetHashCode
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: InputTrigger.GetHashCode()
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: GetHashCode
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 90
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: Gets the hash code for this InputTrigger.
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: The hash code for this InputTrigger.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: BepInExUniUtils.InputFramework.InputTrigger.GetHashCode*
+- uid: BepInExUniUtils.InputFramework.InputTrigger.TryParse(System.String,System.Boolean@)
+  commentId: M:BepInExUniUtils.InputFramework.InputTrigger.TryParse(System.String,System.Boolean@)
+  id: TryParse(System.String,System.Boolean@)
+  parent: BepInExUniUtils.InputFramework.InputTrigger
+  langs:
+  - csharp
+  - vb
+  name: TryParse(string, out bool)
+  nameWithType: InputTrigger.TryParse(string, out bool)
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.TryParse(string, out bool)
+  type: Method
+  source:
+    remote:
+      path: BepInExUniUtils/InputFramework/InputTrigger.cs
+      branch: main
+      repo: https://github.com/corycaron5/BepInExUniUtils.git
+    id: TryParse
+    path: BepInExUniUtils/InputFramework/InputTrigger.cs
+    startLine: 101
+  assemblies:
+  - BepInExUniUtils
+  namespace: BepInExUniUtils.InputFramework
+  summary: Attempts to convert a string to a InputTrigger.
+  example: []
+  syntax:
+    content: public static InputTrigger TryParse(string input, out bool success)
+    parameters:
+    - id: input
+      type: System.String
+      description: The string to convert.
+    - id: success
+      type: System.Boolean
+      description: True if the value was successfully parsed.
+    return:
+      type: BepInExUniUtils.InputFramework.InputTrigger
+      description: The parsed InputTrigger, or a default value if parsing failed.
+    content.vb: Public Shared Function TryParse(input As String, success As Boolean) As InputTrigger
+  overload: BepInExUniUtils.InputFramework.InputTrigger.TryParse*
+  nameWithType.vb: InputTrigger.TryParse(String, Boolean)
+  fullName.vb: BepInExUniUtils.InputFramework.InputTrigger.TryParse(String, Boolean)
+  name.vb: TryParse(String, Boolean)
+references:
+- uid: BepInExUniUtils.InputFramework
+  commentId: N:BepInExUniUtils.InputFramework
+  href: BepInExUniUtils.html
+  name: BepInExUniUtils.InputFramework
+  nameWithType: BepInExUniUtils.InputFramework
+  fullName: BepInExUniUtils.InputFramework
+  spec.csharp:
+  - uid: BepInExUniUtils
+    name: BepInExUniUtils
+    href: BepInExUniUtils.html
+  - name: .
+  - uid: BepInExUniUtils.InputFramework
+    name: InputFramework
+    href: BepInExUniUtils.InputFramework.html
+  spec.vb:
+  - uid: BepInExUniUtils
+    name: BepInExUniUtils
+    href: BepInExUniUtils.html
+  - name: .
+  - uid: BepInExUniUtils.InputFramework
+    name: InputFramework
+    href: BepInExUniUtils.InputFramework.html
+- uid: System.IEquatable{BepInExUniUtils.InputFramework.InputTrigger}
+  commentId: T:System.IEquatable{BepInExUniUtils.InputFramework.InputTrigger}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<InputTrigger>
+  nameWithType: IEquatable<InputTrigger>
+  fullName: System.IEquatable<BepInExUniUtils.InputFramework.InputTrigger>
+  nameWithType.vb: IEquatable(Of InputTrigger)
+  fullName.vb: System.IEquatable(Of BepInExUniUtils.InputFramework.InputTrigger)
+  name.vb: IEquatable(Of InputTrigger)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: BepInExUniUtils.InputFramework.InputTrigger
+    name: InputTrigger
+    href: BepInExUniUtils.InputFramework.InputTrigger.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: BepInExUniUtils.InputFramework.InputTrigger
+    name: InputTrigger
+    href: BepInExUniUtils.InputFramework.InputTrigger.html
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: BepInExUniUtils.InputFramework.InputTrigger.#ctor*
+  commentId: Overload:BepInExUniUtils.InputFramework.InputTrigger.#ctor
+  href: BepInExUniUtils.InputFramework.InputTrigger.html#BepInExUniUtils_InputFramework_InputTrigger__ctor_UnityEngine_KeyCode_UnityEngine_KeyCode_
+  name: InputTrigger
+  nameWithType: InputTrigger.InputTrigger
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.InputTrigger
+  nameWithType.vb: InputTrigger.New
+  fullName.vb: BepInExUniUtils.InputFramework.InputTrigger.New
+  name.vb: New
+- uid: UnityEngine.KeyCode
+  commentId: T:UnityEngine.KeyCode
+  parent: UnityEngine
+  isExternal: true
+  name: KeyCode
+  nameWithType: KeyCode
+  fullName: UnityEngine.KeyCode
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  isExternal: true
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: BepInExUniUtils.InputFramework.InputTrigger.IsPressed*
+  commentId: Overload:BepInExUniUtils.InputFramework.InputTrigger.IsPressed
+  href: BepInExUniUtils.InputFramework.InputTrigger.html#BepInExUniUtils_InputFramework_InputTrigger_IsPressed
+  name: IsPressed
+  nameWithType: InputTrigger.IsPressed
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.IsPressed
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: BepInExUniUtils.InputFramework.InputTrigger.IsDown*
+  commentId: Overload:BepInExUniUtils.InputFramework.InputTrigger.IsDown
+  href: BepInExUniUtils.InputFramework.InputTrigger.html#BepInExUniUtils_InputFramework_InputTrigger_IsDown
+  name: IsDown
+  nameWithType: InputTrigger.IsDown
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.IsDown
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: BepInExUniUtils.InputFramework.InputTrigger.ToString*
+  commentId: Overload:BepInExUniUtils.InputFramework.InputTrigger.ToString
+  href: BepInExUniUtils.InputFramework.InputTrigger.html#BepInExUniUtils_InputFramework_InputTrigger_ToString
+  name: ToString
+  nameWithType: InputTrigger.ToString
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: BepInExUniUtils.InputFramework.InputTrigger.Equals*
+  commentId: Overload:BepInExUniUtils.InputFramework.InputTrigger.Equals
+  href: BepInExUniUtils.InputFramework.InputTrigger.html#BepInExUniUtils_InputFramework_InputTrigger_Equals_BepInExUniUtils_InputFramework_InputTrigger_
+  name: Equals
+  nameWithType: InputTrigger.Equals
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.Equals
+- uid: System.IEquatable{BepInExUniUtils.InputFramework.InputTrigger}.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+  commentId: M:System.IEquatable{BepInExUniUtils.InputFramework.InputTrigger}.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+  parent: System.IEquatable{BepInExUniUtils.InputFramework.InputTrigger}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(InputTrigger)
+  nameWithType: IEquatable<InputTrigger>.Equals(InputTrigger)
+  fullName: System.IEquatable<BepInExUniUtils.InputFramework.InputTrigger>.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+  nameWithType.vb: IEquatable(Of InputTrigger).Equals(InputTrigger)
+  fullName.vb: System.IEquatable(Of BepInExUniUtils.InputFramework.InputTrigger).Equals(BepInExUniUtils.InputFramework.InputTrigger)
+  spec.csharp:
+  - uid: System.IEquatable{BepInExUniUtils.InputFramework.InputTrigger}.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: BepInExUniUtils.InputFramework.InputTrigger
+    name: InputTrigger
+    href: BepInExUniUtils.InputFramework.InputTrigger.html
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{BepInExUniUtils.InputFramework.InputTrigger}.Equals(BepInExUniUtils.InputFramework.InputTrigger)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: BepInExUniUtils.InputFramework.InputTrigger
+    name: InputTrigger
+    href: BepInExUniUtils.InputFramework.InputTrigger.html
+  - name: )
+- uid: BepInExUniUtils.InputFramework.InputTrigger
+  commentId: T:BepInExUniUtils.InputFramework.InputTrigger
+  parent: BepInExUniUtils.InputFramework
+  href: BepInExUniUtils.InputFramework.InputTrigger.html
+  name: InputTrigger
+  nameWithType: InputTrigger
+  fullName: BepInExUniUtils.InputFramework.InputTrigger
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: BepInExUniUtils.InputFramework.InputTrigger.GetHashCode*
+  commentId: Overload:BepInExUniUtils.InputFramework.InputTrigger.GetHashCode
+  href: BepInExUniUtils.InputFramework.InputTrigger.html#BepInExUniUtils_InputFramework_InputTrigger_GetHashCode
+  name: GetHashCode
+  nameWithType: InputTrigger.GetHashCode
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: BepInExUniUtils.InputFramework.InputTrigger.TryParse*
+  commentId: Overload:BepInExUniUtils.InputFramework.InputTrigger.TryParse
+  href: BepInExUniUtils.InputFramework.InputTrigger.html#BepInExUniUtils_InputFramework_InputTrigger_TryParse_System_String_System_Boolean__
+  name: TryParse
+  nameWithType: InputTrigger.TryParse
+  fullName: BepInExUniUtils.InputFramework.InputTrigger.TryParse
