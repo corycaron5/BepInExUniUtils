@@ -15,6 +15,12 @@
         <Title>BepInEx Universal Utilities</Title>
         <Description>A set of general purpose utilities designed for modding with BepInEx</Description>
         <TargetFramework>netstandard2.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>Cory Caron</Authors>
+        <PackageProjectUrl>https://github.com/corycaron5/BepInExUniUtils</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/corycaron5/BepInExUniUtils/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/corycaron5/BepInExUniUtils.git</RepositoryUrl>
+        <RepositoryType>Github</RepositoryType>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
