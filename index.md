@@ -103,6 +103,7 @@ However there is a much simpler method that uses reflection to automatically reg
 > /// </summary>
 > private static void RegisterInternalActions()
 > {
+>     if (!Chainloader.PluginInfos.ContainsKey("BepInExUniUtils")) return;
 >     foreach (Type type in Assembly.GetExecutingAssembly().GetTypes())
 >     {
 >         if(type.IsSubclassOf(typeof(AbstractAction))) UniUtilsPlugin.RegisterAction(type);
